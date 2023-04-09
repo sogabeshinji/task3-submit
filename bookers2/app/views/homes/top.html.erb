@@ -1,0 +1,30 @@
+
+
+<h1>welcome to Bookers !!</h1>
+In Bookers,<br>
+
+you can share and exchange your opinions , inpressions , and emotions<br>
+
+about various books!<br>
+
+<body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "ログアウト", root_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      <% end %>
+      <div>
+        CopyRight Infratop.inc
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
